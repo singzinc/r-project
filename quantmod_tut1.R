@@ -13,8 +13,9 @@ HSI<-getSymbols("^hsi", src="yahoo" , from='2017-01-01', to=Sys.Date(),auto.assi
 
 
 # get yahoo data
-HSBC<-getSymbols("0005.HK", src="yahoo" , from='2017-01-01', to=Sys.Date(),auto.assign=F)
-
+HSBC<-getSymbols("0005.HK", src="yahoo" , from='2017-01-01', to='2017-07-12',auto.assign=F)
+head(HSBC)
+HSBC
 
 MSFT<-getSymbols('MSFT',src='google', from='2017-01-01', to=Sys.Date(),auto.assign=F)
 head(MSFT)
