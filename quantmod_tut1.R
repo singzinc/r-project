@@ -11,16 +11,24 @@ library(PerformanceAnalytics)
 
 HSI<-getSymbols("^hsi", src="yahoo" , from='2017-01-01', to=Sys.Date(),auto.assign=F)
 
+
+# get yahoo data
 HSBC<-getSymbols("0005.HK", src="yahoo" , from='2017-01-01', to=Sys.Date(),auto.assign=F)
 
 
 MSFT<-getSymbols('MSFT',src='google', from='2017-01-01', to=Sys.Date(),auto.assign=F)
 head(MSFT)
 
+
+# google data
 HSBCgoogle<-getSymbols('HSBC',src='google', from='2017-01-01', to=Sys.Date(),auto.assign=F)
 head(HSBCgoogle)
 
-# get current quote
+# create chart
+chartSeries(HSBCgoogle, name= "HSBC",subset='2017-02-1::2017-07-01',theme=chartTheme('white'),TA="addVo(); addBBands();addEMA()")
+
+
+# get current quote from yahoo
 getQuote("QQQQ;SPY;^VXN",what=yahooQF(c("Bid","Ask")))
 
 getQuote("0005.HK;SPY;^VXN",what=yahooQF(c("Bid","Ask")))
@@ -28,7 +36,7 @@ getQuote("0005.HK;SPY;^VXN",what=yahooQF(c("Bid","Ask")))
 
 
 
-#
+# get the econ data
 CPIAUCNS <- getSymbols('CPIAUCNS',src='FRED' , from='2017-01-01', to=Sys.Date(),auto.assign=F)
 head(CPIAUCNS)
 
