@@ -24,9 +24,16 @@ head(MSFT)
 HSBCgoogle<-getSymbols('HSBC',src='google', from='2017-01-01', to=Sys.Date(),auto.assign=F)
 head(HSBCgoogle)
 
-# create chart
+# ############# create chart (style 1)
 chartSeries(HSBCgoogle, name= "HSBC",subset='2017-02-1::2017-07-01',theme=chartTheme('white'),TA="addVo(); addBBands();addEMA()")
 
+# #############create chart (style 2)
+chartSeries(HSBCgoogle, theme="white") #draw the chart 
+#addVo() #add volume 
+addBBands() #add Bollinger Bands 
+addCCI() #add Commodity Channel Index
+
+######################################
 
 # get current quote from yahoo
 getQuote("QQQQ;SPY;^VXN",what=yahooQF(c("Bid","Ask")))
