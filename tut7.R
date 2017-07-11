@@ -38,9 +38,34 @@ getStartEndDate <- function(monValue){
 
 
 
-getStartEndDate(1)
 
 
+library(ggplot2)
+library(quantmod)
+
+
+
+dataRange <- getStartEndDate(3)
+
+HSI<-getSymbols("^hsi", src="yahoo" , from='2017-01-01', to=Sys.Date(),auto.assign=F)
+
+head(HSI)
+dataRange
+chartSeries(HSI,subset=dataRange,theme=chartTheme('white'),TA="addVo(); addBBands();addEMA()")
+
+chartSeries(HSI,subset='2017-02-1::2017-07-11',theme=chartTheme('white'),TA="addVo(); addBBands();addEMA()")
+
+
+c("0005.HK", "0700.HK", "0939.HK")
+
+
+for (stockSymbol in c("0005.HK", "0700.HK", "0939.HK")){
+     print(paste("Stock : ", stockSymbol))
+     stockData <- getSymbols(stockSymbol, src="yahoo" , from='2017-01-01', to=Sys.Date(),auto.assign=F)
+     chartSeries(stockData,name=stockSymbol,subset=dataRange,theme=chartTheme('white'),TA="addVo(); addBBands();addEMA()")
+}
+
+stockData <- getSymbols("0005.HK", src="yahoo" , from='2017-01-01', to=Sys.Date(),auto.assign=F)
 
 
 
