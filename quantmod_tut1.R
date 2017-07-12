@@ -22,8 +22,11 @@ head(MSFT)
 
 
 # google data
-HSBCgoogle<-getSymbols('HSBC',src='google', from='2017-01-01', to=Sys.Date(),auto.assign=F)
+HSBCgoogle<-getSymbols('HSBC',src='google', from='2017-01-01', to=Sys.Date(),auto.assign=F, adjust = "true")
 head(HSBCgoogle)
+
+BOCyahoo<-getSymbols('3988.hk',src='yahoo', from='2017-01-01', to=Sys.Date(),auto.assign=F, adjust = "true")
+BOCyahoo
 
 # ############# create chart (style 1)
 chartSeries(HSBCgoogle, name= "HSBC",subset='2017-02-1::2017-07-01',theme=chartTheme('white'),TA="addVo(); addBBands();addEMA()")
