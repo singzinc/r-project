@@ -34,3 +34,11 @@ install.packages("rmarkdown")
 
 
 install.packages("sqldf")
+
+
+
+########################### tidyr ############
+
+install.packages("tidyr")
+
+install.packages("dplyr")
