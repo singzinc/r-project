@@ -3,7 +3,7 @@ library(ggplot2)
 library(quantmod)
 library(PerformanceAnalytics)
 
-sessionInfo()
+#sessionInfo()
 
 getStartDate <- function(monValue){
   startDateValue <- as.POSIXlt(Sys.Date())
@@ -33,7 +33,8 @@ createChart <- function(hkStockList,chartType){
   
     for (stockSymbol in hkStockList){
       print(paste("Stock : ", stockSymbol))
-      stockData <- getSymbols(stockSymbol, src="yahoo" , from=startDate, to=Sys.Date()+1,auto.assign=F, adjust = "adjustment")
+      stockData <- getSymbols(stockSymbol, src="yahoo" , from=startDate, to=Sys.Date()+1,auto.assign=F,type = "s", adjust = "true")
+      head(stockData)
       for(mon in chartType){
         startDate <- getStartDate(mon)
         dataRange <- getStartEndDate(mon)
@@ -49,6 +50,11 @@ hkStockList <- c("0005.HK", "0700.HK", "0939.HK", "3988.hk", "^HSI")
 
 
 createChart(hkStockList , chartType )
+
+
+
+stockData <- getSymbols("0005.hk", src="yahoo" , from=startDate, to=Sys.Date()+1,auto.assign=F, type = "m", adjust = "true")
+head(stockData)
 
 
 
