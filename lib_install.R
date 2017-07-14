@@ -21,6 +21,8 @@ install.packages("blotter", repos="http://R-Forge.R-project.org")
 
 install.packages("FinancialInstrument", repos="http://R-Forge.R-project.org")
 
+install.packages("TTR")
+
 
 ############################ study R amrkdown #####################
 
