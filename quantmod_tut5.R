@@ -31,6 +31,6 @@ BS
 ########### example 2 ###########
 
 financials <- getFinancials("HKG:0005", auto.assign=F,period="A")
-viewFinancials(financials, type="BS")
+viewFinancials(financials, type="BS", period="A")
 viewFinancials(financials, type="IS", period="Q")
-
+viewFinancials(financials, type="CF", period="Q")
