@@ -44,3 +44,11 @@ install.packages("sqldf")
 install.packages("tidyr")
 
 install.packages("dplyr")
+
+
+
+
+install.packages("Quandl")
+library(Quandl)
+#refer link : https://www.quandl.com/tools/r
+
