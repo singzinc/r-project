@@ -18,7 +18,7 @@ t
 ###########  example 1 ######## 
 
 tickers <-new.env()
-t <-c("AAL",  "AAME", "AAOI", "3988.hk")
+t <-c("AAL",  "AAME", "AAOI")
 t
 
 lapply(t, getFinancials)
@@ -34,3 +34,16 @@ financials <- getFinancials("HKG:0005", auto.assign=F,period="A")
 viewFinancials(financials, type="BS", period="A")
 viewFinancials(financials, type="IS", period="Q")
 viewFinancials(financials, type="CF", period="Q")
+
+##########################################
+
+financials <- getFinancials("HKG:3988", auto.assign=F,period="A")
+viewFinancials(financials, type="BS", period="A")
+viewFinancials(financials, type="IS", period="Q")
+viewFinancials(financials, type="CF", period="Q")
+
+financials <- getFinancials("HKG:0939", auto.assign=F,period="A")
+viewFinancials(financials, type="BS", period="A")
+viewFinancials(financials, type="IS", period="Q")
+viewFinancials(financials, type="CF", period="Q")
+
