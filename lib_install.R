@@ -52,3 +52,20 @@ install.packages("Quandl")
 library(Quandl)
 #refer link : https://www.quandl.com/tools/r
 
+
+
+# World Bank Development indicators for R
+# The World Bank makes available a ton of great data from the World Development Indicators through its web API. The WDI package for R makes it easy to search and download data series from the WDI.
+# refer: https://cran.r-project.org/web/packages/WDI/README.html
+install.packages('WDI')
+library(WDI)
+
+
+
+#Similarly to the WDI package, wbstats offers an interface to the World Bank database.
+#refer https://github.com/GIST-ORNL/wbstats
+install.packages("wbstats")
+library(wbstats)
+
+
+
