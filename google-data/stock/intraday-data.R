@@ -8,9 +8,10 @@ require('TTR')
 
 Sys.setenv(TZ='Asia/Hong_Kong')
 
-#intraday (15 mins delay)
+#
 intraday <- function(symbol, freq, period) {
 	base.url <- 'http://www.google.com/finance/getprices?'
+	#point to HK stock market
 	options.url <- paste('i=', freq, '&x=HKG&p=', period, '&f=d,o,h,l,c,v&df=cpct&q=', symbol, sep = '')
 	full.url <- paste(base.url, options.url, sep = '')
   full.url
