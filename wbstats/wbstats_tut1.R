@@ -104,7 +104,7 @@ ggplot(oil_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(si
 
 
 
-
+####################### GOLD AND PLATINUM #################
 
 # querying seperate for differing time coverage example
 gold_data <- wb(indicator = "GOLD", mrv = 120, freq = "M", POSIXct = TRUE)
@@ -117,6 +117,11 @@ metal_data <- rbind(gold_data, plat_data)
 
 ggplot(metal_data, aes(x = date_ct, y = value, colour = indicator)) + geom_line(size = 1) +
   labs(title = "Precious Metal Prices", x = "Date", y = "US Dollars")
+
+
+
+
+
 
 
 
