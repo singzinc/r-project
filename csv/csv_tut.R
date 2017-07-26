@@ -1,6 +1,5 @@
 
-#dir <- paste( getwd() , "/csv/", sep="")
-#setwd(dir)
+# create csv file
 getwd()
 
 filepath <- paste(getwd(), "/mydata.csv" , sep="")
@@ -12,3 +11,8 @@ data("mtcars")
 mtcars
 # Writing mtcars data
 write.table(mtcars, file = filepath , sep = "\t", row.names = TRUE, col.names = NA)
+
+
+
+
+
